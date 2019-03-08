@@ -54,6 +54,9 @@ public final static int                            DEFAULT_MAX_WAIT             
 
 > 结论：数据库连接没有正常关闭，导致数据库连接池被耗尽，凡是需要查询DB 的接口，都会hung 住，调用方okhttp 请求设置了超时关闭，业务端由于hung 住，没能正常关闭这个http连接，连接状态进入 CLOSE_WAIT（客户端已经关闭），导致http 连接池逐步堆积，最终耗尽了tomcat 的http 连接池； ==> 健康检查失败，服务重启; 如下是客户端超时关闭后，服务端CLOSE_WAIT产生过程的包；
  ![okhttp-timeout](https://ws2.sinaimg.cn/large/006tKfTcgy1g0vnoiaazpj31h9053mzv.jpg)
+ 
+ 连接池未耗尽前，连接能正常关闭
+ ![success-tcp](https://ws4.sinaimg.cn/large/006tKfTcgy1g0voe1v5w8j32ye0e1wve.jpg)
 
 > 解决：
 
