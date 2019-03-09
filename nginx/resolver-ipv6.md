@@ -70,5 +70,5 @@ configure arguments: --prefix=/usr/local/openresty/nginx --with-cc-opt='-O2 -O2 
 curl -v jianhaiqing.test.seewo.com --resolve jianhaiqing.test.seewo.com:80:10.21.17.36
 tcpdump  -i any  'port 80 or port 53' -w cname--all.pcap
 ```
-
++ for detailed packets, refer to https://github.com/jianhaiqing/debug-problem/blob/master/nginx/resolver-ipv6.pcap
 
