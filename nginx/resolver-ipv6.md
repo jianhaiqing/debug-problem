@@ -8,7 +8,7 @@ server {
         listen  80;
         server_name  jianhaiqing.test.seewo.com;
         resolver 114.114.114.114 valid=30s;
-	      set $backends "care.test.seewo.com";
+	set $backends "care.test.seewo.com";
         location / {
                 proxy_pass http://$backends;
                 proxy_http_version 1.1;
@@ -68,7 +68,7 @@ configure arguments: --prefix=/usr/local/openresty/nginx --with-cc-opt='-O2 -O2 
 + 测试脚本
 ```
 curl -v jianhaiqing.test.seewo.com --resolve jianhaiqing.test.seewo.com:80:10.21.17.36
-tcpdump  -i any  'port 80 or port 53' -w cname--all.pcap
+tcpdump  -i any  'port 80 or port 53' -w resolver-ipv6.pcap
 ```
-+ for detailed packets, refer to https://github.com/jianhaiqing/debug-problem/blob/master/nginx/resolver-ipv6.pcap
++ 详细的tcpdump 包信息, refer to https://github.com/jianhaiqing/debug-problem/blob/master/nginx/resolver-ipv6.pcap
 
