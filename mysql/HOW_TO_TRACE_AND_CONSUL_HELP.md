@@ -66,3 +66,4 @@ INSERT INTO t_meta_resource (uid, channel_name, status, resource_data, resource_
 
 - 可以去这里咨询一下[dba stackexchange](https://dba.stackexchange.com/questions/234769/mysql-failed-to-handshake-due-to-lock-thread-cache-not-released)
 - 本人用的是percona 版本，在percona 社区得到了及时的响应[percona forrums](https://www.percona.com/forums/questions-discussions/mysql-and-percona-server/percona-server-5-7/53900-mysql-failed-to-handshake-due-to-lock_thread_cache-not-released)
+- MySQL QQ 技术群793818397 得到叶金荣老师的指导，拓宽了问题定位的手段
