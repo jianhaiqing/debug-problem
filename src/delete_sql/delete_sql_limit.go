@@ -9,8 +9,7 @@ import (
 
 // CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build delete_sql_limit.go
 func main() {
-	// const myDsn = "root:password@tcp(172.18.153.51:13336)/longrun"
-	const myDsn = "root:password@tcp(mysql-master-5.gz.cvte.cn:3310)/seewo_mis_environment"
+	const myDsn = "root:password@tcp(172.18.153.51:13336)/longrun"
 	db, err := sql.Open("mysql", myDsn)
 	// Open doesn't open a connection. Validate DSN data:
 	err = db.Ping()
