@@ -225,7 +225,7 @@ location / {
 - 302 vs 301
 
 ```
-http.status_code 为301,则浏览器端会缓存这个结果，但请求不会再向服务端请求原来的URL，容易导致失控；
+http.status_code 为301,则浏览器端会缓存这个结果，但浏览器再次发起请求时，不会再向服务端请求原来的URL，容易导致失控；
 优点就是变成了一次请求
 ```
 
@@ -335,7 +335,7 @@ include /usr/local/nginx/conf.d/inner-outer-limits.ip;
     proxy_pass http://rabbitmq/;
   }
 ```
-- auth_basic.htpasswd 生产
+- auth_basic.htpasswd 生成
 ``` bash
 yum install httpd-tools -y
 sudo htpasswd  -c auth_basic.htpasswd psd
